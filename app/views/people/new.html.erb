@@ -2,7 +2,16 @@
   <h1>New Person</h1>
 </div>
 
+
 <%= form_for @person, html: {class: "form-horizontal"} do |f| %>
+  <% if @person.errors.present? %>
+      <ul>
+        <% @person.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    <% end %>
+
   <div class="form-group">
     <%= f.label :first_name, class: "control-label col-sm-2" %>
     <div class="col-sm-4">
