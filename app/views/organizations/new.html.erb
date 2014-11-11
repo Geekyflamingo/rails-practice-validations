@@ -4,7 +4,7 @@
 
 <%= form_for @organization, html: {class: "form-horizontal"} do |f| %>
   <% if @organization.errors.present? %>
-      <ul>
+      <ul class= "list list-unstyled alert-danger ">
         <% @organization.errors.full_messages.each do |message| %>
           <li><%= message %></li>
         <% end %>
